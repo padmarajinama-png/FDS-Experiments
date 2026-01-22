@@ -1,0 +1,7 @@
+import numpy as np
+A=np.array([2,23,35,12,3,9,5,15])
+print("Original Array:")
+print(A)
+Arr1=np.where (A>15,100, np.where (A<10,50, np.where (A==12,0,A)))
+print("\nArray After Applying Conditions (values > 15 set to 100) and (values < 10 set to 5):")
+print(Arr1)
