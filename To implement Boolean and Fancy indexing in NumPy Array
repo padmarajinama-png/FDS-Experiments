@@ -1,0 +1,14 @@
+import numpy as np 
+arr=np.random.randint(1,50,size=20) 
+print("Original array :") 
+print(arr) 
+bool_selected=arr[arr>34] 
+print("\n Elements>34(boolean indexing):") 
+print(bool_selected) 
+even_selected=arr[arr%2==0] 
+print("\n Even numbers(boolean indexing):") 
+print(even_selected) 
+indices=[0,2,5] 
+fancy_selected=arr[indices] 
+print("\n Elements at positions 0,2,and,5(fancy indexing):") 
+print(fancy_selected) 
