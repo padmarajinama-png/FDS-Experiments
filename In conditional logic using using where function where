@@ -1,0 +1,13 @@
+import numpy as np 
+A=np.array([13,14,51,12,23,56,7,32]) 
+print("Original Array:") 
+print(A) 
+A_M=np.where(A>14,14,A) 
+print("\n Array after applying condition (values>14 set to 14):") 
+print(A_M) 
+A_M1=np.where(A<14,44,A) 
+print("\n Array after applying condition(values<14 set to 44):") 
+print(A_M1) 
+A_M2=np.where(A==51,555,A) 
+print("\n Array after applying condition(values=51 set to 555,A):") 
+print(A_M2)
