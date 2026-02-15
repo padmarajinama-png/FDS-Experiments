@@ -1,0 +1,14 @@
+import pandas as pd 
+import numpy as np
+ # Create a DataFrame with random numbers 
+np.random.seed(52) # optional, for reproducibility 
+df = pd.DataFrame(np.random.randn(5, 4), columns=['A', 'B', 'C', 'D']) 
+print("DataFrame:")
+print(df) 
+# Compute descriptive statistics 
+print("\nDescriptive Statistics:")
+print("Mean:\n", df.mean())
+print("\nMedian:\n", df.median())
+print("\nStandard Deviation:\n", df.std()) 
+print("\nMinimum:\n", df.min()) 
+print("\nMaximum:\n", df.max())
