@@ -1,0 +1,53 @@
+import numpy as np
+# Rows = students, Columns = subjects
+# 5 students in 3 subjects (Math, Science, English)
+marks = np.array([
+    [85, 37, 92],
+    [70, 88, 75],
+    [90, 91, 89],
+    [60, 65, 70],
+    [88, 84, 90]
+])
+
+# Average per subject
+subject_avg = np.mean(marks, axis=0)
+print("Average marks per subject:", subject_avg)
+
+#Average per student
+student_avg = np.mean(marks, axis=1)
+print("Average marks per student:", student_avg)
+
+#Subject-wise highest & lowest
+highest = np.max(marks, axis=0)
+lowest = np.min(marks, axis=0)
+
+print("Highest marks per subject:", highest)
+print("Lowest marks per subject:", lowest)
+
+#Overall class average
+overall_avg = np.mean(marks)
+print("Overall class average:", overall_avg)
+
+#Student with highest total marks
+total_marks = np.sum(marks, axis=1)
+topper = np.argmax(total_marks)
+
+print("Topper student index:", topper)
+print("Topper total marks:", total_marks[topper])
+
+#Pass / Fail Analysis
+#Assume pass mark = 40 in each subject.
+pass_status = marks >= 40
+passed_all = np.all(pass_status, axis=1)
+
+print("Students passed all subjects:", passed_all)
+
+# Calculating Grade
+grades = np.where(
+    passed_all,
+    np.where(student_avg >= 85, "A",
+    np.where(student_avg >= 70, "B",
+    np.where(student_avg >= 50, "C", "D"))),
+    "No Grade")
+print("Grades:", grades)
+
