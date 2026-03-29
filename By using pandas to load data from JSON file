@@ -1,0 +1,12 @@
+import pandas as pd  
+# Step 1: Load data from a JSON file  
+# Assumes the JSON file is in records or list-of-dicts format  
+df = pd.read_json("input_data.json")  
+print("Original DataFrame:")  
+print(df)  
+# Step 2: Process the DataFrame (example)  
+# Add any processing you want; here we just create a new column  
+df["processed_flag"] = True  
+# Step 3: Save the processed DataFrame back to JSON  
+df.to_json("processed_data.json", orient="records", indent=4)  
+print("\nProcessed data saved to processed_data.json")
